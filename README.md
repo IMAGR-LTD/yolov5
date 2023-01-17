@@ -1,4 +1,4 @@
-Using the run_multiple_detect.sh script, provide the following environment virables directoriesINPUT_DATASET, WEIGHT (.pt) and result diretory RESULT_DIR.
+Using the run_multiple_detect_ams.sh script, provide the following environment virables directoriesINPUT_DATASET, WEIGHT (.pt) and result diretory RESULT_DIR.
 
 <div align="center">
   <p>

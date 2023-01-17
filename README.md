@@ -1,4 +1,12 @@
-Using the run_multiple_detect_ams.sh script, provide the following environment virables directoriesINPUT_DATASET, WEIGHT (.pt) and result diretory RESULT_DIR.
+Using the run_multiple_detect_ams.sh script, provide the following environment virables directories INPUT_DATASET, WEIGHT (.pt) and result diretory RESULT_DIR.
+
+
+For example:
+` 
+export WEIGHT=/nas_cv/walter_stuff/git/yolov5-master/auto_anno/countdown_anno_2/weights/best.pt
+export INPUT_DATASET=/big_daddy/nigel/modular_data_processing/ams/ams_od_1723_processed
+export RESULT_DIR=runs/detect/ams/ams_od_1723_processed
+`
 
 <div align="center">
   <p>

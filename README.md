@@ -1,3 +1,5 @@
+Using the run_multiple_detect.sh script, provide the following environment virables directoriesINPUT_DATASET, WEIGHT (.pt) and result diretory RESULT_DIR.
+
 <div align="center">
   <p>
     <a align="center" href="https://ultralytics.com/yolov5" target="_blank">

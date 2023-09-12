@@ -1,0 +1,20 @@
+path: /home/walter/nas_cv/walter_stuff/yolov5_dataset/images/  # dataset root dir
+train: 
+  - od_no_skip/0
+  - od_no_skip/1
+  - od_no_skip/2
+  - od_no_skip/3
+  - od_no_skip/4
+  - OD_instore_090623_training
+  - OD_instore_30prod_moving_140623_1
+  - OD_instore_30prod_moving_140623_2
+  - OD_instore_30prod_moving_140623
+  - maidstone9_0623
+  - full_of_prods_dylan_desk
+val: 
+  - od_no_skip/5
+  - OD_instore_090623_testset
+
+# Classesnc: 1  
+nc: 1
+names: ['item']  

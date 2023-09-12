@@ -1,0 +1,12 @@
+path: /raid/walter/nas_cv/damola/yolov7/  # dataset root dir
+train: 
+  - all_data_jpg/images/train  # train images (relative to 'path') 128 images
+    #  - finetune_countdown_dataset/images/train
+val: 
+  - all_data_jpg/images/test  # val images (relative to 'path') 128 images
+    # - finetune_countdown_dataset/images/test
+test: all_data_jpg/images/test
+
+# Classesnc: 1  
+nc: 1
+names: ['item']  

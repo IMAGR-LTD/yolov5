@@ -1,0 +1,14 @@
+path: /raid/walter/nas_cv/walter_stuff/modular_dataset/  # dataset root dir
+train: 
+  - sonae/images/onboard
+  - sonae/images/sonae_onboard_finetune_0
+  - sonae/images/sonae_onboard_finetune_others
+  - sonae/images/mc_onboard_blue_glove
+  - sonae/images/onboard_finetune_v3
+val: 
+  - sonae/images/sonae_onboard_finetune_0
+  - sonae/images/sonae_onboard_finetune_others  
+
+# Classesnc: 1  
+nc: 1
+names: ['item']  

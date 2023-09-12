@@ -1,0 +1,10 @@
+path: /raid/walter/nas_cv/walter_stuff/modular_dataset/  # dataset root dir
+train: 
+  - auk_office/images
+  - Countdown/images
+val: 
+  - auk_office_test/images  
+
+# Classesnc: 1  
+nc: 1
+names: ['item']  

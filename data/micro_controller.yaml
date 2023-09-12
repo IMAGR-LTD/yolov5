@@ -1,0 +1,17 @@
+path: /raid/walter/nas_cv/walter_stuff/yolov5_dataset/images/onboard  # dataset root dir
+train: 
+  - "012993112059"
+  - "076150982312"
+  - "5201043001169"
+  - "8004690052846"
+  - "4422322232222"
+  - "012993112059"
+  - "9300675078481"
+  - "9414334000215"
+  - "94564761"
+val: 
+  - "94564761"
+
+# Classesnc: 1  
+nc: 1
+names: ['item']  

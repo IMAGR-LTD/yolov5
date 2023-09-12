@@ -1,0 +1,13 @@
+path: /home/walter/nas_cv/walter_stuff/yolov5_dataset/images/new_office  # dataset root dir
+train: 
+  - "cam0"
+  - "cam1"
+  - "cam2"
+val: 
+  - "cam0"
+  - "cam1"
+  - "cam2"
+
+# Classesnc: 1  
+nc: 1
+names: ['item']  

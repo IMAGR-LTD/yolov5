@@ -796,7 +796,6 @@ class Detections:
 
     def crop(self, save=True, save_dir='runs/detect/exp', exist_ok=False):
         # save_dir = increment_path(save_dir, exist_ok, mkdir=True) if save else None
-        print(save_dir)
         return self._run(crop=True, save=save, save_dir=save_dir)  # crop results
 
     def render(self, labels=True):

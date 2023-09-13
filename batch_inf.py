@@ -76,7 +76,7 @@ def main():
 
     pool = mp.Pool(num_devices)
     barcodes = os.listdir(image_root)
-    split_barcodes = split_task(barcodes, 4)
+    split_barcodes = split_task(barcodes, num_devices)
     
 
     for i in range(num_devices):

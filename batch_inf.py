@@ -3,13 +3,18 @@ from pathlib import Path
 from PIL import Image
 import glob 
 import os 
+from models.common import DetectMultiBackend, AutoShape
 
 
 
 
 # Model
 device = torch.device('cuda:1')
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='./blackout/blackout/weights/blackout.pt').to(device)
+# model = torch.hub.load('ultralytics/yolov5', 'custom', path='./blackout/blackout/weights/blackout.pt').to(device)
+weights = "./blackout/blackout/weights/blackout.pt"
+weights = "./new_office_onboard/new_office_onboard2/weights/best.pt"
+model = DetectMultiBackend(weights, device=device)
+model = AutoShape(model)
 
 image_root = "/home/walter/big_daddy/onboard_jpg"
 save_root = "/home/walter/crops"
@@ -35,10 +40,9 @@ def image_loader(directory, batch_size):
         start_idx = end_idx
 
 
-
 for barcode in barcodes:
     image_dir = os.path.join(image_root, barcode)
-    save_dir = os.path.join(save_root, barcode)
+    save_dir = Path(os.path.join(save_root, barcode))
     os.makedirs(save_dir, exist_ok=True)
     image_generator = image_loader(image_dir, batch_size)
     for batch in image_generator:

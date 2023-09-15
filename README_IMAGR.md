@@ -13,7 +13,7 @@ pip install -r requirements.txt
 {
 python3 batch_inf.py \
     --image_root='/home/walter/big_daddy/onboard_jpg' \
-    --save_root='/home/wa' \
+    --save_root='/home/walter/crops' \
     --weights='/home/walter/git/yolov5/new_office_onboard/new_office_onboard2/weights/best.pt' \
     --batch_size=128 \
     --gpus "cuda:0" "cuda:1" "cuda:2" "cuda:3"

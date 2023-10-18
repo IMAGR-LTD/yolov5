@@ -10,6 +10,7 @@ import argparse
 def image_loader(directory, batch_size):
     image_files = glob.glob(f"{directory}/*/*.jpg")
     num_images = len(image_files)
+    print(num_images)
     start_idx = 0
 
     while start_idx < num_images:

@@ -1,0 +1,12 @@
+path: /home/walter/nas_cv/walter_stuff/yolov5_dataset/images/  # dataset root dir
+train: 
+  - "od_jpg_ed_data/cam0"
+  - "od_jpg_ed_data/cam1"
+  - "od_jpg_ed_data/cam2"
+val: 
+  - "od_jpg_ed_data/cam0"
+  - "od_jpg_ed_data/cam1"
+  - "od_jpg_ed_data/cam2"
+# Classesnc: 1  
+nc: 1
+names: ['item']  

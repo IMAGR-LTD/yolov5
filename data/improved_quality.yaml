@@ -1,0 +1,16 @@
+path: /home/walter/nas_cv/walter_stuff/yolov5_dataset/images/improve_quality  # dataset root dir
+train: 
+  - "train/cam0"
+  - "train/cam1"
+  - "train/cam2"
+val: 
+  - "val/cam0"
+  - "val/cam1"
+  - "val/cam2"
+test:
+  - "test/cam0"
+  - "test/cam1"
+  - "test/cam2"
+# Classesnc: 1  
+nc: 1
+names: ['item']  

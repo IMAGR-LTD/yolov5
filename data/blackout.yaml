@@ -1,12 +1,10 @@
 path: /home/walter/nas_cv/walter_stuff/yolov5_dataset/images/blackout  # dataset root dir
 train: 
-  - "cam0"
-  - "cam1"
-  - "cam2"
+  - "train"
 val: 
-  - "cam0"
-  - "cam1"
-  - "cam2"
+  - "val"
+test:
+  - "test"
 
 # Classesnc: 1  
 nc: 1

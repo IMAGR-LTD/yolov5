@@ -1,0 +1,7 @@
+path: /home/walter/nas_cv/walter_stuff/yolov5_dataset/images  # dataset root dir
+train: 
+  - "od_events/train"
+val: 
+  - "od_events/val"
+nc: 1
+names: ['item']  

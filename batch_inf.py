@@ -26,7 +26,7 @@ def image_loader(directory, batch_size):
         start_idx = end_idx
 
 
-def process(device, weights, image_root, save_root, barcodes, batch_size):
+def process(device, weights, image_root, save_root, render_root, barcodes, batch_size):
     model = DetectMultiBackend(weights, device=device)
     model = AutoShape(model)
 
@@ -39,6 +39,7 @@ def process(device, weights, image_root, save_root, barcodes, batch_size):
         print(f"processing barcode: {barcode}")
         for batch in image_generator:
             results = model(batch, size=640) 
+            results.save(save_dir=render_root, exist_ok=True, save=True)
             results.crop(save_dir=save_dir, exist_ok=True, save=False)
 
 
@@ -61,6 +62,7 @@ def main():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('-i', '--image_root', required=True, help='path to the images dir')
     parser.add_argument('-s', '--save_root', required=True, help='path to the save dir')
+    parser.add_argument('-r', '--render_root', required=True, help='path to the save the render image')
     parser.add_argument('-w', '--weights', required=True, help='path to model weight .pt')
     parser.add_argument('-b', '--batch_size', default=128, type=int, help='img batch size ')
     parser.add_argument('-g', '--gpus',  required=True, nargs='+', type=str, help="list of available gpus cuda:0, cuda:1, ...")
@@ -68,10 +70,11 @@ def main():
 
     image_root = args.image_root
     save_root = args.save_root
+    render_root = args.render_root
     weights = args.weights
     batch_size = args.batch_size
     gpus = args.gpus
-
+    
     devices = [torch.device(x) for x in gpus]
     num_devices = len(devices)
 
@@ -81,7 +84,7 @@ def main():
     
 
     for i in range(num_devices):
-        pool.apply_async(process, args=(devices[i], weights, image_root, save_root, split_barcodes[i], batch_size))
+        pool.apply_async(process, args=(devices[i], weights, image_root, save_root, render_root, split_barcodes[i], batch_size))
 
     pool.close()
     pool.join()

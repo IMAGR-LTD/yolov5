@@ -9,17 +9,19 @@ train:
   - "blackout_new_2/cam0"
   - "blackout_new_2/cam1"
   - "blackout_new_2/cam2"
-  - "blackout_john_FP"
-  - "blackout_shop/john/cam0"
-  - "blackout_shop/john/cam1"
-  - "blackout_shop/john/cam2"
   - "od-false-positives/cam0"
   - "od-false-positives/cam1"
   - "od-false-positives/cam2"
   - "misTarget"
+  - "blackout_finetune_6OCT"
+  - "blackout_FP_from_ED"
 val: 
+  - "blackout_john_FP"
+  - "blackout_shop/john/cam0"
+  - "blackout_shop/john/cam1"
+  - "blackout_shop/john/cam2"
+test:
   - "blackout_testset_all"
-
 # Classesnc: 1  
 nc: 1
 names: ['item']  

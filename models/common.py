@@ -3,6 +3,7 @@
 Common modules
 """
 
+import os
 import ast
 import contextlib
 import json
@@ -623,8 +624,8 @@ class DetectMultiBackend(nn.Module):
 
 class AutoShape(nn.Module):
     # YOLOv5 input-robust model wrapper for passing cv2/np/PIL/torch inputs. Includes preprocessing, inference and NMS
-    conf = 0.25  # NMS confidence threshold
-    iou = 0.45  # NMS IoU threshold
+    conf = 0.5  # NMS confidence threshold
+    iou = 0.1  # NMS IoU threshold
     agnostic = False  # NMS class-agnostic
     multi_label = False  # NMS multiple labels per box
     classes = None  # (optional list) filter by class, i.e. = [0, 15, 16] for COCO persons, cats and dogs
@@ -774,7 +775,10 @@ class Detections:
                 display(im) if is_notebook() else im.show(self.files[i])
             if save:
                 f = self.files[i]
-                im.save(save_dir / f)  # save
+                cam = Path(self.files[i].split("_")[3])
+                os.makedirs(save_dir / cam, exist_ok=True)
+                
+                im.save(save_dir / cam / f)  # save
                 if i == self.n - 1:
                     LOGGER.info(f"Saved {self.n} image{'s' * (self.n > 1)} to {colorstr('bold', save_dir)}")
             if render:

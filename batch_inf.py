@@ -11,6 +11,7 @@ from utils.general import non_max_suppression
 def image_loader(directory, batch_size):
     image_files = glob.glob(f"{directory}/*/*.jpg")
     num_images = len(image_files)
+    print(image_files[0])
     print(num_images)
     start_idx = 0
 
@@ -19,8 +20,8 @@ def image_loader(directory, batch_size):
         end_idx = min(start_idx + batch_size, num_images)
         
         for i in range(start_idx, end_idx):
-            image_path = os.path.join(directory, image_files[i])
-            img = Image.open(image_path)
+            # image_path = os.path.join(directory, image_files[i])
+            img = Image.open(image_files[i])
             batch_images.append(img)
         
         yield batch_images
@@ -41,7 +42,7 @@ def process(device, weights, image_root, save_root, render_root, barcodes, batch
         
         # os.makedirs(save_whole_dir, exist_ok=True)
         for batch in image_generator:
-            results = model(batch, size=640) 
+            results = model(batch, size=320) 
             # results.save(save_dir=save_whole_dir, exist_ok=True)
             results.crop(save_dir=save_dir, exist_ok=True, save=False)
 

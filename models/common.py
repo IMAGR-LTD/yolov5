@@ -757,7 +757,7 @@ class Detections:
                             # file = save_dir / 'crops' / self.names[int(cls)] / self.files[i] if save else None
                             cam_id = self.files[i].split("_")[2]
                             file = save_dir / f"cam{cam_id}" / self.files[i]
-                            if conf > 0.8:
+                            if conf > 0.5:
                                 save_one_box(box, im, file=file, save=True)
                             crops.append({
                                 'box': box,

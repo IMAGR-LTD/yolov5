@@ -37,12 +37,12 @@ def process(device, weights, image_root, save_root, render_root, barcodes, batch
         os.makedirs(save_dir, exist_ok=True)
         image_generator = image_loader(img_dir, batch_size)
         print(f"processing barcode: {barcode}")
-        save_whole_dir = Path(os.path.join(render_root, barcode))
-        print(save_whole_dir)
-        os.makedirs(save_whole_dir, exist_ok=True)
+        # save_whole_dir = Path(os.path.join(render_root, barcode))
+        
+        # os.makedirs(save_whole_dir, exist_ok=True)
         for batch in image_generator:
             results = model(batch, size=640) 
-            results.save(save_dir=save_whole_dir, exist_ok=True)
+            # results.save(save_dir=save_whole_dir, exist_ok=True)
             results.crop(save_dir=save_dir, exist_ok=True, save=False)
 
 

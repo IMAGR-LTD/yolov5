@@ -755,7 +755,8 @@ class Detections:
                         label = f'{self.names[int(cls)]} {conf:.2f}'
                         if crop:
                             # file = save_dir / 'crops' / self.names[int(cls)] / self.files[i] if save else None
-                            file = save_dir / self.files[i].split("_")[3] / self.files[i]
+                            cam_id = self.files[i].split("_")[2]
+                            file = save_dir / f"cam{cam_id}" / self.files[i]
                             if conf > 0.8:
                                 save_one_box(box, im, file=file, save=True)
                             crops.append({

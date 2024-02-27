@@ -85,10 +85,10 @@ def main():
 
     pool = mp.Pool(num_devices)
     barcodes = os.listdir(image_root)
-    print(f"processing total number of :{len(barcodes)} barcodes")
-    split_barcodes = split_task(barcodes, num_devices)
-
-    print(split_barcodes)
+    done_barcodes = os.listdir(save_root)
+    barcodes_to_precess = [x for x in barcodes if x not in done_barcodes]
+    print(f"processing total number of :{len(barcodes_to_precess)} barcodes")
+    split_barcodes = split_task(barcodes_to_precess, num_devices)
     
 
     for i in range(num_devices):

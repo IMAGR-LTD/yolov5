@@ -81,10 +81,14 @@ def main():
     
     devices = [torch.device(x) for x in gpus]
     num_devices = len(devices)
+    print(f"number of gpus devices: {num_devices}")
 
     pool = mp.Pool(num_devices)
     barcodes = os.listdir(image_root)
+    print(f"processing total number of :{len(barcodes)} barcodes")
     split_barcodes = split_task(barcodes, num_devices)
+
+    print(split_barcodes)
     
 
     for i in range(num_devices):

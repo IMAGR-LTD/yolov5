@@ -88,7 +88,7 @@ def main():
     barcodes_to_precess = []
     for barcode in barcodes:
         done_imgs = glob.glob(f"{save_root}/{barcode}/*/*.jpg")
-        if done_imgs < 1000:
+        if len(done_imgs) < 1000:
             barcodes_to_precess.append(barcode)
     # done_barcodes = os.listdir(save_root)
     # barcodes_to_precess = [x for x in barcodes if x not in done_barcodes]
